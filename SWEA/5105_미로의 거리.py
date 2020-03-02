@@ -1,5 +1,5 @@
 # 문제
-# SWEA 5097 - [파이썬 S/W 문제해결 기본 6일차] Queue - 회전
+# SWEA 5105 - [파이썬 S/W 문제해결 기본 6일차] Queue - 미로의 거리
 
 # 나의 코드
 dy = [-1, 1, 0, 0]  # 이동할 수 있는 방향 (상, 하, 좌, 우)
@@ -10,11 +10,15 @@ def availableMaze(y,x):
 
 def BFS(y, x):
     global result
+    
+    # 시작점 (y, x)를 큐에 삽입
     queue.append((y, x))
     visited.append((y, x))
     
+    # 큐가 비어 있지 않은 경우
     while queue:
         y, x = queue.pop(0)
+        
         for i in range(4):
             new_y = y + dy[i]
             new_x = x + dx[i]
@@ -23,6 +27,7 @@ def BFS(y, x):
                 queue.append((new_y, new_x))
                 visited.append((new_y, new_x))
                 distance[new_y][new_x] = distance[y][x] + 1
+                # 도착지점 
                 if maze[new_y][new_x] == 3:
                     result = distance[new_y][new_x] - 1
                     return
@@ -32,7 +37,6 @@ T = int(input())
 for tc in range(T):
     N = int(input())
     maze = []
-    visited = [[0]*N for _ in range(N)]
     
     # 2차원 배열 입력 받기
     for i in range(N):
@@ -44,6 +48,7 @@ for tc in range(T):
 
     result = 0
     queue = []
+    visited = []
     distance = [[0]*N for _ in range(N)]
     BFS(y, x)
     
