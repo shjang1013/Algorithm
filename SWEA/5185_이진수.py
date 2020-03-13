@@ -6,5 +6,10 @@ T = int(input())
 
 for tc in range(T):
     N, List = input().split()
+    
+    # 16진수 -> 10진수 -> 2진수
     List = format(int(List, 16), 'b')
-    print('#%d %s' % (tc + 1, '0'+List))
+    
+    num = int(N)*4 - len(List)
+    
+    print('#%d %s' % (tc + 1, '0'*num + List))
