@@ -3,17 +3,18 @@
 
 # 수정한 코드(다른 코드 참고)
 def DFS(S):
-    global temp, num, result
+    global sum, temp, result
     
+    # 배터리 소비량
     if len(temp) == N-1:
         for i, j in temp:
-            num += Battery[i][j]
+            sum += Battery[i][j]
         
-        num += Battery[S][0]
+        sum += Battery[S][0]
         result.append(num)
         num = 0
         return
-    
+
     for i in range(1, N):
         if not visited[i]:
             temp.append((S, i))
@@ -23,8 +24,8 @@ def DFS(S):
             visited[i] = False
 
 
-TC = int(input())
-for tc in range(1, TC+1):
+T = int(input())
+for tc in range(T):
     N = int(input())
     Battery = [list(map(int, input().split())) for _ in range(N)]
     
@@ -35,4 +36,4 @@ for tc in range(1, TC+1):
     
     DFS(0)
     
-    print('#%d %d'%(tc, min(result)))
+    print('#%d %d' %(tc+1, min(result)))
