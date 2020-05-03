@@ -6,4 +6,4 @@ def solution(answer):
                 signal[i] = j+1
                 break
 
-return signal
+    return signal
