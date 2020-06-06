@@ -34,4 +34,6 @@ def solution(number, k):
 
 # 숙지할 것
 1. enumerate 사용법
-2. solution("7777777",2)의 경우도 생각하기
+2. solution("7777777",2), solution("54321", 1)의 경우도 생각하기
+
+# 처음에 while k로 코드를 작성했으나 k가 항상 감소하지 않는 경우를 생각하지 않았음 => 수정 
