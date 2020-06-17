@@ -1,4 +1,4 @@
-# 나의 코드(실패) - 예외 : [2,2,2,2,2]
+# 나의 코드
 def solution(arr1, arr2):
     answer = []
     
