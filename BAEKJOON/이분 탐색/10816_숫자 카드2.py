@@ -36,3 +36,28 @@ for i in range(M):
         print(0, end=' ')
     else:
         print(dict[array[i]], end=' ')
+
+
+# 시간 초과를 해결하기 위해 다른 방법 모색
+# Counter 이용
+import sys
+
+from collections import Counter
+
+N = int(sys.stdin.readline())
+
+A = list(map(int, sys.stdin.readline().split()))
+
+Count_A = Counter(A)
+
+M = int(sys.stdin.readline())
+
+array = list(map(int, sys.stdin.readline().split()))
+
+for i in array:
+    if i in Count_A:
+        print(Count_A[i], end=' ')
+    else:
+        print(0, end=' ')
+
+# 딕셔너리를 이용하는 방법도 생각해 볼 것 
