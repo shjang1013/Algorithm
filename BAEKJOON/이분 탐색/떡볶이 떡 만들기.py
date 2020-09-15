@@ -17,7 +17,7 @@ while start <= end:
     
     for i in rice:
         if i > mid:
-            sum += x-mid
+            sum += (i-mid)
     
     # 떡의 양이 부족한 경우 더 많이 자르기(왼쪽 부분 탐색)
     if sum < M:
