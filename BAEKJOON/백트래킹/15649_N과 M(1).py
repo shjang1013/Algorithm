@@ -16,9 +16,9 @@ def go(i):
         if visited[j]:
             continue
         
-        visited[j] = True
+        visited[j] = 1
         array[i] = j
         go(i+1)
-        visited[j] = False
+        visited[j] = 0
 
 go(0)

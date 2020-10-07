@@ -1,25 +1,25 @@
-# 1부터 N까지 자연수 중에서 중복 없이 M개를 고른 수열
-# 고른 수열은 오름차순
+# 1부터 N까지 자연수 중에서 중복 없이 M개를 고른 수열 
 N, M = map(int, input().split())
 
-visited = [0] * (N + 1)
+List = sorted(list(map(int, input().split())))
 
+visited = [0] * N
 array = [0] * M
 
-def go(i, start):
+def go(i):
     if i == M:
         for j in range(M):
             print(array[j], end=' ')
         print()
         return
 
-    for j in range(start, N + 1):
+    for j in range(N):
         if visited[j]:
             continue
         
         visited[j] = 1
-        array[i] = j
-        go(i+1, j+1)
+        array[i] = List[j]
+        go(i+1)
         visited[j] = 0
 
-go(0, 1)
+go(0)
